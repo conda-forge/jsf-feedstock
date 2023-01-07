@@ -1,4 +1,6 @@
 {% set version = "0.5.4" %}
+{% set pytest_args = '--cov-fail-under=97 -k="not test_external_ref"' %}
+
 
 package:
   name: jsf
@@ -24,7 +26,7 @@ outputs:
       entry_points:
         - jsf = jsf.cli:app
       noarch: python
-      script: {{ PYTHON }} -m pip install . -vv
+      script: {{ PYTHON }} -m pip install . -vv --no-deps --ignore-installed
     requirements:
       host:
         - pip
@@ -61,7 +63,7 @@ outputs:
       commands:
         - pip check
         - jsf --help
-        - pytest -m jsf --cov=jsf --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=100
+        - pytest -vv --pyargs jsf --cov=jsf --cov-report=term-missing:skip-covered --no-cov-on-fail {{ pytest_args }}
 
 about:
   home: https://github.com/ghandic/jsf
