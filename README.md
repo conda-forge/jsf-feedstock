@@ -28,6 +28,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-jsf-green.svg)](https://anaconda.org/conda-forge/jsf) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/jsf.svg)](https://anaconda.org/conda-forge/jsf) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/jsf.svg)](https://anaconda.org/conda-forge/jsf) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/jsf.svg)](https://anaconda.org/conda-forge/jsf) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-jsf--with--cli-green.svg)](https://anaconda.org/conda-forge/jsf-with-cli) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/jsf-with-cli.svg)](https://anaconda.org/conda-forge/jsf-with-cli) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/jsf-with-cli.svg)](https://anaconda.org/conda-forge/jsf-with-cli) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/jsf-with-cli.svg)](https://anaconda.org/conda-forge/jsf-with-cli) |
 
 Installing jsf
 ==============
@@ -39,16 +40,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `jsf` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `jsf, jsf-with-cli` can be installed with `conda`:
 
 ```
-conda install jsf
+conda install jsf jsf-with-cli
 ```
 
 or with `mamba`:
 
 ```
-mamba install jsf
+mamba install jsf jsf-with-cli
 ```
 
 It is possible to list all of the versions of `jsf` available on your platform with `conda`:
