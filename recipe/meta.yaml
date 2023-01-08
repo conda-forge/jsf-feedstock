@@ -1,6 +1,5 @@
-{% set version = "0.5.4" %}
-{% set pytest_args = '--cov-fail-under=97 -k="not test_external_ref"' %}
-
+{% set version = "0.7.0" %}
+{% set pytest_args = '--cov-fail-under=99' %}
 
 package:
   name: jsf
@@ -8,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/j/jsf/jsf-{{ version }}.tar.gz
-  sha256: ac1d157bb6367c5cc956a8e58217a5b8d5bf04038fe237f218516beed91d4a69
+  sha256: 5001c270a641369baa66976d8d050a1cd0d2b352efc0d03d5ae7719efaa6dbc2
 
 build:
   noarch: python
@@ -36,6 +35,7 @@ outputs:
         - jsonschema >=4.17.3
         - pydantic >=1.10.4
         - python >=3.7
+        - requests
         - rstr >=3.2.0
         - smart_open >=6.3.0
     test:
@@ -60,6 +60,7 @@ outputs:
       requires:
         - pip
         - pytest-cov
+        - pyjwt
       commands:
         - pip check
         - jsf --help
