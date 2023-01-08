@@ -1,4 +1,4 @@
-{% set version = "0.5.2" %}
+{% set version = "0.7.0" %}
 
 package:
   name: jsf
@@ -7,9 +7,9 @@ package:
 source:
   - fn: LICENSE-MIT-jsf-{{ version }}
     url: https://raw.githubusercontent.com/ghandic/jsf/{{ version }}/LICENSE
-    sha256: 1f6a5ddfa2a8cebb59c225edf45b729b90e26bf933b351380ead90aea42ad804
+    sha256: 8bf4000731037655e16fe941d3f174f978b3d05b1257d6ae7626cddaa90e5473
   - url: https://pypi.io/packages/source/j/jsf/jsf-{{ version }}.tar.gz
-    sha256: ab07fa4bcce59bc425f37c54e8e9d105d03bd138421d17b177575c1ad77ff48b
+    sha256: 5001c270a641369baa66976d8d050a1cd0d2b352efc0d03d5ae7719efaa6dbc2
 
 build:
   entry_points:
