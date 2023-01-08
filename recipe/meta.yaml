@@ -1,52 +1,78 @@
-{% set version = "0.5.2" %}
+{% set version = "0.7.0" %}
+{% set pytest_args = '--cov-fail-under=99' %}
 
 package:
   name: jsf
   version: {{ version }}
 
 source:
-  - fn: LICENSE-MIT-jsf-{{ version }}
-    url: https://raw.githubusercontent.com/ghandic/jsf/{{ version }}/LICENSE
-    sha256: 1f6a5ddfa2a8cebb59c225edf45b729b90e26bf933b351380ead90aea42ad804
-  - url: https://pypi.io/packages/source/j/jsf/jsf-{{ version }}.tar.gz
-    sha256: ab07fa4bcce59bc425f37c54e8e9d105d03bd138421d17b177575c1ad77ff48b
+  url: https://pypi.io/packages/source/j/jsf/jsf-{{ version }}.tar.gz
+  sha256: 5001c270a641369baa66976d8d050a1cd0d2b352efc0d03d5ae7719efaa6dbc2
 
 build:
-  entry_points:
-    - jsf=jsf.cli:app
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
   number: 0
 
 requirements:
   host:
-    - pip
     - python >=3.7
   run:
-    - faker
-    - jsonschema
-    - pydantic
     - python >=3.7
-    - rstr
-    - smart_open
-    - typer
 
-test:
-  imports:
-    - jsf
-  commands:
-    - pip check
-    - jsf --help
-  requires:
-    - pip
+outputs:
+  - name: jsf
+    build:
+      entry_points:
+        - jsf = jsf.cli:app
+      noarch: python
+      script: {{ PYTHON }} -m pip install . -vv --no-deps --ignore-installed
+    requirements:
+      host:
+        - pip
+        - python >=3.7
+      run:
+        - faker
+        - jsonschema >=4.17.3
+        - pydantic >=1.10.4
+        - python >=3.7
+        - rstr >=3.2.0
+        - smart-open-with-http >=6.3.0
+    test:
+      imports:
+        - jsf
+      commands:
+        - pip check
+      requires:
+        - pip
+
+  - name: jsf-with-cli
+    build:
+      noarch: python
+    requirements:
+      host:
+        - python >=3.7
+      run:
+        - python >=3.7
+        - {{ pin_subpackage('jsf', exact=True) }}
+        - typer >=0.7.0
+    test:
+      requires:
+        - pip
+        - pytest-cov
+        - pyjwt
+      commands:
+        - pip check
+        - jsf --help
+        - pytest -vv --pyargs jsf --cov=jsf --cov-report=term-missing:skip-covered --no-cov-on-fail {{ pytest_args }}
 
 about:
   home: https://github.com/ghandic/jsf
   summary: Creates fake JSON files from a JSON schema
   license: MIT
   license_file:
-    - LICENSE-MIT-jsf-{{ version }}
+    - jsf/LICENSE
 
 extra:
+  feedstock-name: jsf
   recipe-maintainers:
     - bollwyvl
