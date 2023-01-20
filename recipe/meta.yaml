@@ -1,4 +1,5 @@
-{% set version = "0.7.0" %}
+{% set pytest_args = "--cov-fail-under=99" %}
+{% set version = "0.7.1" %}
 {% set pytest_args = '--cov-fail-under=99' %}
 
 package:
@@ -7,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/j/jsf/jsf-{{ version }}.tar.gz
-  sha256: 5001c270a641369baa66976d8d050a1cd0d2b352efc0d03d5ae7719efaa6dbc2
+  sha256: 6b3d344fffd892b76147ad75f20668553ddafc6d051b13a3dc6bb61cf0af8309
 
 build:
   noarch: python
