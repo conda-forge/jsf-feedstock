@@ -1,11 +1,11 @@
-About jsf
-=========
+About jsf-feedstock
+===================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/jsf-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/ghandic/jsf
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/jsf-feedstock/blob/main/LICENSE.txt)
 
 Summary: Creates fake JSON files from a JSON schema
 
