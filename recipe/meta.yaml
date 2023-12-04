@@ -1,4 +1,4 @@
-{% set version = "0.8.0" %}
+{% set version = "0.9.0" %}
 
 package:
   name: jsf
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/j/jsf/jsf-{{ version }}.tar.gz
-  sha256: 4c8edd6fb5bef487703818aec42b75a01d49b6c7279773e2463875477b9abb84
+  sha256: b83ced0b89d11796fba49ad1b7118778d7e008ea1721f10e344a69797c33b391
 
 build:
   noarch: python
