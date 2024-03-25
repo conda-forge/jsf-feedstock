@@ -1,5 +1,6 @@
 {% set min_python = "python >=3.8" %}
-{% set version = "0.11.0" %}
+{% set min_python = "python >=3.8" %}
+{% set version = "0.11.1" %}
 {% set min_python = "python >=3.8" %}
 
 package:
@@ -8,7 +9,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/j/jsf/jsf-{{ version }}.tar.gz
-  sha256: 4ab46ec853043015d9f2b0096032f947f573548e8942425c9616212aa7b5af99
+  sha256: d182a198f79ca25d04106a08420a61a6610d5a31ce15b29d620509b2f1f973f5
 
 build:
   noarch: python
