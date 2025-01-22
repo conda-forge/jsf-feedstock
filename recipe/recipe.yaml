@@ -30,6 +30,7 @@ outputs:
       host:
         - pip
         - python ${{ python_min }}.*
+        - setuptools
       run:
         - faker >=15.3.4
         - jsonschema >=4.17.3
@@ -52,7 +53,7 @@ outputs:
     requirements:
       run:
         - python >=${{ python_min }}
-        - ${{ pin_subpackage('jsf', exact=True) }}
+        - ${{ pin_subpackage("jsf", exact=True) }}
         - typer >=0.7.0
     tests:
       - python:
@@ -62,8 +63,8 @@ outputs:
             - jsf
       - requirements:
           run:
-            - pytest-cov
             - pyjwt
+            - pytest-cov
             - python ${{ python_min }}.*
         script:
           - jsf --help
