@@ -8,12 +8,12 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/j/jsf/jsf-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/j/jsf/jsf-{{ version }}.tar.gz
   sha256: 07055b363281d38ce871a9256a00587d8472802c5108721a7fe5884465104b5d
 
 build:
   noarch: python
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -64,6 +64,7 @@ outputs:
         - pip
         - pytest-cov
         - pyjwt
+        - python {{ python_min }}
       commands:
         - pip check
         - jsf --help
